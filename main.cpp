@@ -128,7 +128,7 @@ int main() {
             break;
         }
         case 4: {
-            cout << "Deseja salvar as mudanças?" << endl;
+            cout << "Deseja salvar as mudancas 1.Sim 2.Nao: " << endl;
             op = setAInt();
             switch (op) {
                 case 1:
@@ -147,7 +147,7 @@ int main() {
             goto mainMenu;
         }
     }
-    return 0;
+    goto mainMenu;
 }
 
 int setAInt() {

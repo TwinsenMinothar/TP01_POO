@@ -27,7 +27,7 @@ void Professor::listarProfessores(std::vector<Professor> professores) {
     std::cout << "Professores" << std::endl;
     for (int i = 0; i < professores.size(); i++) {
         std::cout << "[" << i << "] " << professores[i].getNome() << " " << professores[i].getIdade() << " " << professores[i].getDisciplina()
-                  << "" << professores[i].getSalario() << std::endl;
+                  << " " << professores[i].getSalario() << std::endl;
     }
 }
 
@@ -56,7 +56,9 @@ std::ostream &operator<<(std::ostream &os, const Professor &professor) {
 void Professor::buscaProfessor(std::vector<Professor> professores, std::string nome) {
     for (int i = 0; i < professores.size(); i++) {
         if (nome.compare(professores[i].getNome()) == 0){
-            std::cout << professores[i] << " Posicao: " << i;
+            std::cout << professores[i] << " Posicao: " << i << std::endl;
+        } else {
+            std::cout << "Nome nao encontrado" << std::endl;
         }
     }
 }

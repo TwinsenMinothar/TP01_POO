@@ -43,7 +43,9 @@ std::ostream &operator<<(std::ostream &os, const Aluno &aluno) {
 void Aluno::buscaAluno(std::vector<Aluno> aluno, std::string nome) {
     for (int i = 0; i < aluno.size(); i++) {
         if (nome.compare(aluno[i].getNome()) == 0){
-             cout << aluno[i] << " Posicao: " << i;
+             cout << aluno[i] << " Posicao: " << i << endl;
+        } else {
+            cout << "Nome nao encontrado" << endl;
         }
     }
 }
