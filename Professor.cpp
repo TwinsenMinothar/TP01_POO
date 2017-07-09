@@ -25,10 +25,13 @@ Professor::~Professor()
 
 void Professor::listarProfessores(std::vector<Professor> professores) {
     std::cout << "Professores" << std::endl;
-    for (int i = 0; i < professores.size(); i++) {
-        std::cout << "[" << i << "] " << professores[i].getNome() << " " << professores[i].getIdade() << " " << professores[i].getDisciplina()
-                  << " " << professores[i].getSalario() << std::endl;
+    int i;
+    for (i = 0; i < professores.size(); i++) {
+        if(professores[i].getNome() == "")
+            break;
+        std::cout << "[" << i << "] " << professores[i] << std::endl;
     }
+    std::cout << "Total de Professores: " << i << std::endl;
 }
 
 const std::string &Professor::getDisciplina() const {

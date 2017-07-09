@@ -9,6 +9,7 @@
 #include "Aluno.h"
 #include "Professor.h"
 #include "Auxiliar.h"
+#include <iostream>
 
 class Cadastro : public Pessoa {
 public:

@@ -21,10 +21,13 @@ Aluno::~Aluno() {
 
 void Aluno::listarAlunos(std::vector<Aluno> alunos) {
     cout << "Alunos" << endl;
-    for (int i = 0; i < alunos.size(); i++) {
-        cout << "[" << i << "] " << alunos[i].getNome() << " " << alunos[i].getIdade() << " " << alunos[i].getCurso()
-             << endl;
+    int i;
+    for (i = 0; i < alunos.size(); i++) {
+        if (alunos[i].getNome() == "")
+            break;
+        cout << "[" << i << "] " << alunos[i] << endl;
     }
+    cout << "Total de Alunos: " << i << endl;
 }
 
 const std::string &Aluno::getCurso() const {
@@ -41,11 +44,14 @@ std::ostream &operator<<(std::ostream &os, const Aluno &aluno) {
 }
 
 void Aluno::buscaAluno(std::vector<Aluno> aluno, std::string nome) {
+    bool nAchou = true;
     for (int i = 0; i < aluno.size(); i++) {
-        if (nome.compare(aluno[i].getNome()) == 0){
-             cout << aluno[i] << " Posicao: " << i << endl;
-        } else {
+        if (nome.compare(aluno[i].getNome()) == 0) {
+            cout << aluno[i] << " Posicao: " << i << endl;
+            nAchou = false;
+        } else if(nAchou) {
             cout << "Nome nao encontrado" << endl;
+            nAchou = false;
         }
     }
 }

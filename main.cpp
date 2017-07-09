@@ -133,7 +133,8 @@ int main() {
             switch (op) {
                 case 1:
                     Cadastro::salvarDados(alunos, professores, auxiliares);
-                    break;
+                    cout << "Salvo com Sucesso" << endl;
+                    return 0;
                 case 2:
                     return 0;
                 default: {

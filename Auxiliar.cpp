@@ -20,10 +20,13 @@ Auxiliar::~Auxiliar() {
 
 void Auxiliar::listarAuxiliares(std::vector<Auxiliar> auxiliares) {
     std::cout << "Auxiliares" << std::endl;
-    for (int i = 0; i < auxiliares.size(); i++) {
-        std::cout << "[" << i << "] " << auxiliares[i].getNome() << " " << auxiliares[i].getIdade() << " "
-                  << auxiliares[i].getFuncao() << " " << auxiliares[i].getSalario() << std::endl;
+    int i;
+    for (i = 0; i < auxiliares.size(); i++) {
+        if(auxiliares[i].getNome() == "")
+            break;
+        std::cout << "[" << i << "] " << auxiliares[i] << std::endl;
     }
+    std::cout << "Total de Auxiliares: " << i << std::endl;
 }
 
 const std::string &Auxiliar::getFuncao() const {
